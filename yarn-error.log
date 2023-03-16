@@ -1,0 +1,96 @@
+Arguments: 
+  /home/tim/.nvm/versions/node/v19.4.0/bin/node /home/tim/.yarn/bin/yarn.js add eslint-plugin-resolver-typescript eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react-hooks eslint-config-airbnb
+
+PATH: 
+  /home/tim/.yarn/bin:/home/tim/.config/yarn/global/node_modules/.bin:/home/tim/.rbenv/bin:/home/tim/.rbenv/shims:/home/tim/.rbenv/shims:/home/tim/.rbenv/shims:/home/tim/.nvm/versions/node/v19.4.0/bin:/home/tim/bin:/usr/local/bin:/home/tim/.cache/cloud-code/installer/google-cloud-sdk/bin:/home/tim/.yarn/bin:/home/tim/.config/yarn/global/node_modules/.bin:/home/tim/.rbenv/bin:/home/tim/.rbenv/shims:/home/tim/.rbenv/shims:/home/tim/.rbenv/shims:/home/tim/.rbenv/bin:/home/tim/.nvm/versions/node/v19.4.0/bin:/home/tim/bin:/usr/local/bin:/home/tim/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/opt/giteye/:/home/tim/snap/flutter/common/flutter/bin:/opt/giteye/:/home/tim/snap/flutter/common/flutter/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  19.4.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/eslint-plugin-resolver-typescript: Not found
+      at params.callback [as _callback] (/home/tim/.yarn/lib/cli.js:66145:18)
+      at self.callback (/home/tim/.yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/home/tim/.yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/home/tim/.yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "ramp_codesandbox_ts",
+    "version": "1.0.0",
+    "main": "builder.js",
+    "author": "Tim Fraczak",
+    "license": "MIT",
+    "scripts": {
+      "pre-commit": "lint-staged",
+      "lint": "eslint \"src/**/*.{ts,tsx}\" --max-warnings=0",
+      "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+      "start": "ts-node builder.ts --watch",
+      "build": "ts-node builder.ts"
+    },
+    "dependencies": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+      "@types/fs-extra": "^9.0.13",
+      "@types/live-server": "^1.2.1",
+      "@types/node": "^18.11.9",
+      "@types/postcss-preset-env": "^7.7.0",
+      "@types/react": "^18.0.25",
+      "@types/react-dom": "^18.0.8",
+      "@typescript-eslint/eslint-plugin": "^5.42.0",
+      "@typescript-eslint/parser": "^5.42.0",
+      "autoprefixer": "^10.4.13",
+      "chokidar": "^3.5.3",
+      "esbuild": "^0.15.13",
+      "esbuild-css-modules-plugin": "^2.6.2",
+      "esbuild-sass-plugin": "^2.4.0",
+      "eslint": "^8.26.0",
+      "eslint-config-airbnb": "^19.0.4",
+      "eslint-config-prettier": "^8.5.0",
+      "eslint-plugin-import": "^2.26.0",
+      "eslint-plugin-jsx-a11y": "^6.6.1",
+      "eslint-plugin-react": "^7.31.10",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "fs-extra": "^10.1.0",
+      "husky": "^8.0.1",
+      "lint-staged": "^13.0.3",
+      "live-server": "^1.2.2",
+      "postcss": "^8.4.18",
+      "postcss-preset-env": "^7.8.2",
+      "prettier": "^2.7.1",
+      "ts-node": "^10.9.1",
+      "typescript": "^4.8.4"
+    },
+    "lint-staged": {
+      "*.+(ts|tsx)": "eslint --fix",
+      "*.+(json|css|md)": "prettier --write"
+    },
+    "husky": {
+      "hooks": {
+        "pre-commit": "lint-staged"
+      }
+    },
+    "overrides": {
+      "chokidar": "^3.5.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

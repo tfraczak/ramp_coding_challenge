@@ -10,7 +10,9 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'airbnb',
     'airbnb/hooks',
-    'prettier'
+    'prettier',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-require-type-checking',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,10 +20,19 @@ module.exports = {
     sourceType: 'module', // Allows using import/export statements
     ecmaFeatures: {
       jsx: true // Enable JSX since we're using React
-    }
+    },
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
   },
-  plugins: ['react', 'jsx-a11y', '@typescript-eslint'],
+  plugins: ['react', 'jsx-a11y', '@typescript-eslint', 'import'],
   rules: {
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function',
+      }
+    ],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
@@ -49,10 +60,15 @@ module.exports = {
     react: {
       version: 'detect' // Automatically detect the react version
     },
+    'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx']
-      }
+      },
+      typescript: {},
     }
   }
 }

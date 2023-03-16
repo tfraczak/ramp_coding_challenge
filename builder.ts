@@ -46,14 +46,14 @@ const buildParams: BuildOptions = {
   incremental: isWatch,
   plugins: [
     cssModulesPlugin(),
-    sassPlugin({
-      async transform(source) {
-        const { css } = await postcss([autoprefixer, postcssPresetEnv({ stage: 0 })]).process(source, {
-          from: undefined
-        });
-        return css;
-      }
-    })
+    // sassPlugin({
+    //   async transform(source) {
+    //     const { css } = await postcss([autoprefixer, postcssPresetEnv({ stage: 0 })]).process(source, {
+    //       from: undefined
+    //     });
+    //     return css;
+    //   }
+    // })
   ]
 };
 
